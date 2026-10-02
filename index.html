@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XABAR — иммерсивный шутер о постапокалипсисе</title>
+  <meta name="description" content="XABAR — кроссплатформенный иммерсивный шутер от первого лица в постапокалипсисе: одиночная игра и мультиплеер. ПК (Windows) и Android, Unity 6.">
+  <meta property="og:title" content="XABAR — иммерсивный шутер о постапокалипсисе">
+  <meta property="og:description" content="Кроссплатформенный иммерсивный шутер от первого лица в постапокалипсисе — одиночная игра и мультиплеер.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://xabargame.github.io/assets/img/shots/01.webp">
+  <meta name="theme-color" content="#0f1011">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/manrope-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>.skip{position:absolute;left:-9999px}</style>
+  <script>
+    // Тёмная тема — по умолчанию; светлая ставится до отрисовки, если её выбрали ранее.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#top" aria-label="Наверх">
+        <img class="brand__mark" src="assets/img/icons/xabar.webp" alt="" width="34" height="34">
+        <span class="brand__name">XABAR</span>
+      </a>
+      <nav class="nav" aria-label="Разделы">
+        <a href="#about" data-bind="ui.nav.about"></a>
+        <a href="#media" data-bind="ui.nav.media"></a>
+        <a href="#status" data-bind="ui.nav.status"></a>
+        <a href="#team" data-bind="ui.nav.team"></a>
+        <a href="#partners" data-bind="ui.nav.partners"></a>
+        <a href="#community" data-bind="ui.nav.community"></a>
+      </nav>
+      <div class="controls">
+        <button class="ctrl" id="langBtn" type="button"></button>
+        <button class="ctrl ctrl--icon" id="themeBtn" type="button">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top"></section>
+    <section class="section wrap" id="about"></section>
+    <section class="section wrap" id="media"></section>
+    <section class="section wrap" id="status"></section>
+    <section class="section wrap" id="team"></section>
+    <section class="section wrap" id="partners"></section>
+    <section class="section wrap" id="community"></section>
+  </main>
+
+  <footer class="footer wrap" id="footer"></footer>
+
+  <dialog class="lightbox" id="lightbox">
+    <img class="lightbox__img" alt="">
+    <button class="lightbox__btn lightbox__close" type="button" data-lb="close">✕</button>
+    <button class="lightbox__btn lightbox__prev" type="button" data-lb="prev">‹</button>
+    <button class="lightbox__btn lightbox__next" type="button" data-lb="next">›</button>
+    <p class="lightbox__count"></p>
+  </dialog>
+
+  <noscript><p class="wrap">Для отображения сайта включите JavaScript. / Please enable JavaScript.</p></noscript>
+
+  <script src="data/content.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    // Если открыт один index.html без папок assets/ и data/ (например, файл переслан на телефон),
+    // вместо пустой страницы объясняем, что не так.
+    if (!window.CONTENT) {
+      document.getElementById('main').innerHTML =
+        '<p style="max-width:36em;margin:2em auto;padding:0 16px;font:16px/1.5 system-ui,sans-serif">' +
+        'Не удалось загрузить файлы сайта. Откройте сайт по ссылке или всю папку проекта целиком, а не один index.html.<br>' +
+        'Site files failed to load. Open the site via its link, not a standalone index.html.</p>';
+    }
+  </script>
+</body>
+</html>
