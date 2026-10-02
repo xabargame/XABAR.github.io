@@ -38,7 +38,8 @@
       if (l.url) parts.push('<a href="' + esc(l.url) + '">' + esc(stripUrl(l.url)) + '</a>');
     });
     parts.push(esc(T.onepager.location));
-    return parts.map(function (x) { return '<span class="nw">' + x + '</span>'; }).join('<span class="sep">·</span>');
+    // <wbr> — точка переноса между контактами: без неё строка шире страницы, и браузер ужимает весь PDF по ширине
+    return parts.map(function (x) { return '<span class="nw">' + x + '</span>'; }).join('<span class="sep">·</span><wbr>');
   }
 
   function renderOnepager() {
