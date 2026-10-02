@@ -79,7 +79,7 @@ window.CONTENT = {
       timeline: [
         { period: 'Январь 2026', title: 'Старт разработки', text: 'Сформирована концепция проекта.' },
         { period: 'Сейчас', title: 'Демо-версия', text: 'Активная разработка демо и закрытое тестирование.', current: true },
-        { period: 'Релиз', title: 'Дата не объявлена', text: 'Следите за новостями в сообществе.' },
+        { period: 'Дата не объявлена', title: 'Релиз', text: 'Следите за новостями в сообществе.' },
       ],
       numbers: [
         { value: '1', label: 'разработчик' },
@@ -191,7 +191,7 @@ window.CONTENT = {
       timeline: [
         { period: 'January 2026', title: 'Development start', text: 'The project concept is finalized.' },
         { period: 'Now', title: 'Demo', text: 'Active demo development and closed testing.', current: true },
-        { period: 'Release', title: 'TBA', text: 'Follow the news in our community.' },
+        { period: 'TBA', title: 'Release', text: 'Follow the news in our community.' },
       ],
       numbers: [
         { value: '1', label: 'developer' },
